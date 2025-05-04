@@ -24,6 +24,9 @@ pub struct Wesponse {
     estimated_confirmation_time: String,
 }
 
+// Define price per room as a constant
+const PRICE_PER_ROOM_PER_NIGHT: f32 = 50.0;
+
 pub async fn make_reservation(Json(payload): Json<RekwestPayload>) -> impl IntoResponse {
     // How do we derive the response given the reqwest'
     let RekwestPayload {
@@ -47,7 +50,7 @@ pub async fn make_reservation(Json(payload): Json<RekwestPayload>) -> impl IntoR
     Json(Wesponse {
         ref_no: Uuid::new_v4(),
         hotel_name,
-        total_amount_payable: (number_of_rooms as f32) * 50.0 * (days as f32),
+        total_amount_payable: (number_of_rooms as f32) * PRICE_PER_ROOM_PER_NIGHT * (days as f32),
         check_in_date,
         check_out_date,
         estimated_confirmation_time: "5 hours".into(),
