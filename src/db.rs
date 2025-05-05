@@ -4,14 +4,14 @@ use uuid::Uuid;
 
 #[derive(FromRow)]
 pub struct Reservation {
-    ref_no: Uuid,
-    hotel_name: String,
-    no_of_rooms: i32,
-    check_in_date: NaiveDate,
-    check_out_date: NaiveDate,
-    reservation_time: NaiveDateTime,
-    customer_name: String,
-    total_amount: f32,
+    pub ref_no: Uuid,
+    pub hotel_name: String,
+    pub no_of_rooms: i8,
+    pub check_in_date: NaiveDate,
+    pub check_out_date: NaiveDate,
+    pub reservation_time: NaiveDateTime,
+    pub customer_name: String,
+    pub total_amount: f32,
 }
 
 pub struct LagoonDb<'a> {
