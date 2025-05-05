@@ -37,7 +37,6 @@ pub async fn make_reservation(
     Extension(pool): Extension<Arc<PgPool>>,
     Json(payload): Json<RekwestPayload>,
 ) -> impl IntoResponse {
-    // How do we derive the response given the reqwest'
     let RekwestPayload {
         hotel_name,
         number_of_rooms,
