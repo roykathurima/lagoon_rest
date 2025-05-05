@@ -13,7 +13,7 @@ use crate::db::{LagoonDb, Reservation};
 #[derive(Deserialize)]
 pub struct RekwestPayload {
     hotel_name: String,
-    number_of_rooms: i8,
+    number_of_rooms: i16,
     check_in_date: NaiveDate,
     check_out_date: NaiveDate,
     customer_name: String,

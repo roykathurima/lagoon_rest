@@ -2,11 +2,11 @@ use chrono::{NaiveDate, NaiveDateTime};
 use sqlx::{FromRow, PgPool};
 use uuid::Uuid;
 
-#[derive(FromRow)]
+#[derive(FromRow, Debug)]
 pub struct Reservation {
     pub ref_no: Uuid,
     pub hotel_name: String,
-    pub no_of_rooms: i8,
+    pub no_of_rooms: i16,
     pub check_in_date: NaiveDate,
     pub check_out_date: NaiveDate,
     pub reservation_time: NaiveDateTime,
